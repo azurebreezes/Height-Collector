@@ -48,14 +48,17 @@ html, body{
   color: #ff9999;
 }
 
-.g-signin2{
+/* .g-signin2{
   width: 100%;
+  margin: 0 auto;
 }
 
 .g-signin2 > div{
   margin: 0 auto;
-}
+} */
 
 #my-g-button{
+  width: 100%;
   text-align:center;
+  margin: 0 auto;
 }
