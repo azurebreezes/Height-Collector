@@ -25,7 +25,7 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>
   function onSignIn(googleUser) {
-    document.getElementByName("email_name").innerHTML="testing";
+    document.getElementByName("email_name").value="testing";
     console.log(googleUser.getBasicProfile().getName());
     var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
