@@ -47,3 +47,11 @@ html, body{
   font-size:15px;
   color: #ff9999;
 }
+
+.g-signin2{
+  width: 100%;
+}
+
+.g-signin2 > div{
+  margin: 0 auto;
+}
