@@ -17,7 +17,7 @@
         <input title="Your data will be safe" placeholder="Enter your height in cm" type="number" min="50", max="300" step="0.01" name="height_name" required> <br>
         <button type="submit">Submit</button>
       </form>
-      <div class="g-signin2" data-onsuccess="onSignIn">.</div>
+      <div id="my-g-button" class="g-signin2" data-onsuccess="onSignIn">.</div>
       <a href="#" onclick="signOut();">Sign out</a>
     </div>
   </body>
@@ -27,18 +27,10 @@
 <script>
   function onSignIn(googleUser) {
     document.getElementById('my_email').value=googleUser.getBasicProfile().getEmail();
-    console.log(googleUser.getBasicProfile().getName());
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  }
+    }
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
+    auth2.signOut();
     document.getElementById('my_email').value='';
   }
 

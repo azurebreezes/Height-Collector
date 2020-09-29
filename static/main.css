@@ -55,3 +55,7 @@ html, body{
 .g-signin2 > div{
   margin: 0 auto;
 }
+
+#my-g-button{
+  text-align:center;
+}
