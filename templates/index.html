@@ -18,6 +18,7 @@
         <button type="submit">Submit</button>
       </form>
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <a href="#" onclick="signOut();">Sign out</a>
     </div>
   </body>
 </html>
@@ -25,7 +26,7 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>
   function onSignIn(googleUser) {
-    document.getElementById('my_email').value='testing';
+    document.getElementById('my_email').value='googleUser.getBasicProfile().getEmail()';
     console.log(googleUser.getBasicProfile().getName());
     var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
