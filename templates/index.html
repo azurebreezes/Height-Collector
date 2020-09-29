@@ -17,8 +17,8 @@
         <input title="Your data will be safe" placeholder="Enter your height in cm" type="number" min="50", max="300" step="0.01" name="height_name" required> <br>
         <button type="submit">Submit</button>
       </form>
-      <div id="my-g-button" class="g-signin2" data-onsuccess="onSignIn">button</div>
-      <a href="#" onclick="signOut();">Sign out</a>
+      <div id='my-g-button' class="g-signin2" data-onsuccess="onSignIn"></div>
+      <a id='my-sign-out' href="#" onclick="signOut();">Sign out google account</a>
     </div>
   </body>
 </html>
@@ -27,10 +27,15 @@
 <script>
   function onSignIn(googleUser) {
     document.getElementById('my_email').value=googleUser.getBasicProfile().getEmail();
+    document.getElementById("my-g-button").style.display = "none";
+    document.getElementById("my-sign-out").style.display = "block";
     }
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut();
     document.getElementById('my_email').value='';
+    document.getElementById("my-sign-out").style.display = "none";
+    document.getElementById("my-g-button").style.display = "block";
+
   }
 </script>
